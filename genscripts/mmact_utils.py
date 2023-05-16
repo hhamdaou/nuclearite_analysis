@@ -15,7 +15,7 @@ from icecube.common_variables import track_characteristics
 from icecube.common_variables import time_characteristics
 from I3Tray import *
 
-gen_params        = { "beta_spectrum":  [0.001,0.002], # [  0.750,  0.995  ],
+gen_params        = { "beta_spectrum":  [0.001,0.001], # [  0.750,  0.995  ],
 											 
 						"MeanFreePath":1 * I3Units.m,
                       "disk_distance":    1000.0    * I3Units.m,

@@ -24,7 +24,7 @@ job.commands["when_to_transfer_output"] = 'ON_EXIT'
 job.commands["notification"] = 'ALWAYS'
 job.commands["requirements"] = 'HAS_CUDA'
 job.commands["requirements"] = 'CUDACapability'
-job.commands["arguments"] = ' -n 10000 -d /data/user/hhamdaoui/MC_nuclearites/MC0_generated   -e /data/user/hhamdaoui/MC_nuclearites/MC1_L0_triggered -p $(Process) -r 1400  -s baseline  $(MASS) -t new_dir_R1100_d1000 -a 1100 -c 1000'
+job.commands["arguments"] = ' -n 10000 -d /data/user/hhamdaoui/MC_nuclearites/MC0_generated   -e /data/user/hhamdaoui/MC_nuclearites/MC1_L0_triggered -p $(Process) -r 1400  -s baseline  $(MASS) -t new_dir_R1100_d1000_ -a 1100 -c 1000'
 
 ####end
 

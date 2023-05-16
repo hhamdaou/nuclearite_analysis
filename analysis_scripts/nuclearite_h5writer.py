@@ -13,13 +13,13 @@ from icecube.hdfwriter import I3SimHDFWriter
 import glob
 
 ######### CORSIKA-in-ice/
-path='/data/sim/IceCube/2016/filtered/level2/CORSIKA-in-ice/*/0000000-0000999/Level2_IC86.2016_corsika.020783.000661.i3.zst'
+#path='/data/sim/IceCube/2016/filtered/level2/CORSIKA-in-ice/*/0000000-0000999/Level2_IC86.2016_corsika.020783.000661.i3.zst'
 #outdir="/data/user/hhamdaoui/MC_nuclearites/h5/corsika" 
 ###################################
 
 ######### Nucelarite
-#path='/data/user/hhamdaoui/MC_nuclearites/MC3_L2_northprocessed'
-#outdir="/data/user/hhamdaoui/MC_nuclearites/h5/MC3_L2_northprocessed/"
+path='/data/user/hhamdaoui/MC_nuclearites/MC3_L2_northprocessed'
+outdir="/data/user/hhamdaoui/MC_nuclearites/h5/MC3_L2_northprocessed/"
 
 ######### data
 #path='/data/exp/IceCube/2019/filtered/level2/0101/Run00131986/'
@@ -51,7 +51,7 @@ if os.path.isdir(path):
     for directory in directories:
         print(directory)
         for filename in os.listdir(directory):
-            if 'new_dir_R1100_d10001e+14' in filename:
+            if 'beta_0001_0001' in filename:
                 f = os.path.join(directory, filename)
                 print('input file :',f)
                 tray = I3Tray()

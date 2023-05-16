@@ -3,7 +3,7 @@ from datetime import datetime
 import os
 today = datetime.now()
 
-condor_path="/home/hhamdaoui/condor/nuclearites/" + today.strftime("%m_%d_%Y_%H_%M_%S")+'/'
+condor_path="/home/hhamdaoui/condor/nuclearites/gen_prop_trigg/" + today.strftime("%m_%d_%Y_%H_%M_%S")+'/'
 os.mkdir(condor_path)
 os.mkdir(condor_path+"log/")
 

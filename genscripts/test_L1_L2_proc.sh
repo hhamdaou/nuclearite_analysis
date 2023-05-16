@@ -1,0 +1,1 @@
+/data/user/hhamdaoui/nuclearite_analysis/genscripts/L1_L2_proc.py -i /data/user/hhamdaoui/MC_nuclearites/MC1_L0_triggered/new_dir_R500_d7001e+13_nevent_10000_nuclearite_IC86__beta_0001_0002__trigger_level__baseline__proc_0000.i3.gz -b test_L1.i3.gz -o test_L2.i3.gz

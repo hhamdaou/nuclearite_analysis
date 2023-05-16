@@ -66,8 +66,8 @@ if exitstatus_L1:
 mmp.vbprint( "Wrapping Level 2!", [1,2] )
 
 #run_command  = "/home/aburgman/icecode/meta-projects/combo/stable_rev175960/src/filterscripts/resources/scripts/offlineL2/process.py"
-run_command  = "/data/user/hhamdaoui/nuc-analysis/process.py"
-
+#run_command  = "/data/user/hhamdaoui/nuc-analysis/process.py"
+run_command  = "/data/user/hhamdaoui/nuc-analysis/metaproject/build/filterscripts/resources/scripts/offlineL2/process.py"
 run_command += " -i {i}".format( i=args.betwfile  )
 run_command += " -o {o}".format( o=args.outfile )
 run_command += " -g {g}".format( g=gcdname      )

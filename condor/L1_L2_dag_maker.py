@@ -10,7 +10,7 @@ os.mkdir(condor_path+"log/")
 print(condor_path)
 job = pydag.htcondor.HTCondorSubmit(condor_path+"OneJob.sub", "/data/user/hhamdaoui/nuclearite_analysis/genscripts/wrap_L1_L2_proc.sh")
 job.commands["initialdir"] = '/data/ana/BSM/IC86_MagneticMonopoles_AboveCherenkovThreshold/'
-LOGFILE=condor_path+"/home/hhamdaoui/condor/nuclearites/log/$Fn(file).$(cluster).$(Process)"
+LOGFILE=condor_path+"log/$Fn(file).$(cluster).$(Process)"
 
 #job.commands["getenv"] = True
 #job.commands["initialdir"] = "$ENV(HOME)"

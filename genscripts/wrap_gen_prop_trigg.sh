@@ -17,7 +17,7 @@ t) title=$OPTARG;;
 v) verbosity=$OPTARG;;
 B) beta=$OPTARG;;
 z) mass=$OPTARG;;
-a) adius=$OPTARG;;
+a) radius=$OPTARG;;
 c) distance=$OPTARG;;
 
 esac

@@ -3,6 +3,8 @@ import os
 from icecube import icetray, dataio, dataclasses,simclasses,common_variables,phys_services
 from icecube.icetray import I3Units
 from icecube.simprod.segments import DetectorSim, Calibration
+from icecube.KalmanFilter import MyKalman, MyKalmanSeed
+from icecube.filterscripts import filter_globals
 
 import I3Tray
 from I3Tray import *
@@ -11,6 +13,12 @@ from I3Tray import I3Tray
 from icecube.hdfwriter import I3HDFWriter
 from icecube.hdfwriter import I3SimHDFWriter
 import glob
+path='/data/user/hhamdaoui/nuclearite_analysis/genscripts/test_corsika_L2.i3.gz'
+outdir='/data/user/hhamdaoui/nuclearite_analysis/genscripts/'
+######### MuonGun/
+#path='/data/sim/IceCube/2020/filtered/level2/MuonGun/21534/*/0000000-0000999/Level2_IC86.2016_corsika.020783.000661.i3.zst'
+#outdir="/data/user/hhamdaoui/MC_nuclearites/h5/MuonGun" 
+###################################
 
 ######### CORSIKA-in-ice/
 #path='/data/sim/IceCube/2016/filtered/level2/CORSIKA-in-ice/*/0000000-0000999/Level2_IC86.2016_corsika.020783.000661.i3.zst'
@@ -18,8 +26,8 @@ import glob
 ###################################
 
 ######### Nucelarite
-path='/data/user/hhamdaoui/MC_nuclearites/MC3_L2_northprocessed'
-outdir="/data/user/hhamdaoui/MC_nuclearites/h5/MC3_L2_northprocessed/"
+#path='/data/user/hhamdaoui/MC_nuclearites/MC3_L2_northprocessed/'
+#outdir="/data/user/hhamdaoui/MC_nuclearites/h5/MC3_L2_northprocessed/"
 
 ######### data
 #path='/data/exp/IceCube/2019/filtered/level2/0101/Run00131986/'
@@ -56,14 +64,21 @@ if os.path.isdir(path):
                 print('input file :',f)
                 tray = I3Tray()
                 tray.Add('I3Reader', Filename=f)
+                Outputfile=outdir+filename.rstrip('i3.gz')+'.h5'
+                print('output file :',Outputfile)
 
+                if os.path.exists(Outputfile):
+                     print("The file already exist will be removed")
+                     os.remove(Outputfile)
+                else:
+                     print("The file does not exist")
+                     
                 tray.Add(I3HDFWriter,
                 #Output='/data/user/hhamdaoui/input_NNMFit/'+dataset+'/'+filename.rstrip('i3.zst')+'.h5',
-                Output=outdir+filename.rstrip('i3.gz')+'.h5',
+                Output=Outputfile,
 
                 Keys=keys_list ,     SubEventStreams=SubEv_Streams
                 )
-                print('output file :',outdir+filename.rstrip('i3.gz')+'.h5')
 
 
                 tray.Execute()
@@ -76,8 +91,15 @@ elif os.path.isfile(path):
         print(outdir+basename.rstrip('i3.gz')+'.h5')
         tray = I3Tray()
         tray.Add('I3Reader', Filename=filename)
+        Outputfile=outdir+basename.rstrip('i3.gz')+'.h5'
+        print('output file :',Outputfile)
+        if os.path.exists(Outputfile):
+            print("The file already exist will be removed")
+            os.remove(Outputfile)
+        else:
+            print("The file does not exist")
         tray.Add(I3HDFWriter,
-        Output=outdir+basename.rstrip('i3.gz')+'.h5',
+        Output=Outputfile,
         Keys=keys_list ,     SubEventStreams=SubEv_Streams
         )
 

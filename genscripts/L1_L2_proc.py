@@ -1,5 +1,5 @@
-#!/bin/sh /cvmfs/icecube.opensciencegrid.org/py3-v4.1.1/icetray-start
-#METAPROJECT /cvmfs/icecube.opensciencegrid.org/py3-v4.1.1/RHEL_7_x86_64/metaprojects/combo/stable
+#!/bin/sh /cvmfs/icecube.opensciencegrid.org/py3-v4.2.1/icetray-start
+#METAPROJECT /data/user/hhamdaoui/nuc-analysis/metaproject/build
 # /data/user/aburgman/icecode/meta-projects/combo/stable_rev175960/RHEL_7_x86_64/
 
 
@@ -42,7 +42,6 @@ mmp.vbprint( "  Level 2:  input: {f}".format(f=args.betwfile), [1,2], 1 )
 mmp.vbprint( "           output: {f}".format(f=args.outfile),  [1,2], 1 )
 
 
-
 mmp.vbprint( "Wrapping Level 1!", [1,2] )
 
 mmp.vbprint( " start SimulationFiltering.py!", [1,2] )
@@ -66,8 +65,8 @@ if exitstatus_L1:
 mmp.vbprint( "Wrapping Level 2!", [1,2] )
 
 #run_command  = "/home/aburgman/icecode/meta-projects/combo/stable_rev175960/src/filterscripts/resources/scripts/offlineL2/process.py"
-#run_command  = "/data/user/hhamdaoui/nuc-analysis/process.py"
-run_command  = "/data/user/hhamdaoui/nuc-analysis/metaproject/build/filterscripts/resources/scripts/offlineL2/process.py"
+run_command  = "/data/user/hhamdaoui/nuclearite_analysis/genscripts/process.py"
+#run_command  = "/data/user/hhamdaoui/nuc-analysis/metaproject/build/filterscripts/resources/scripts/offlineL2/process.py"
 run_command += " -i {i}".format( i=args.betwfile  )
 run_command += " -o {o}".format( o=args.outfile )
 run_command += " -g {g}".format( g=gcdname      )

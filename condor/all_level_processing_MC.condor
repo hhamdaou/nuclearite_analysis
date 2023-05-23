@@ -1,13 +1,13 @@
 Universe = vanilla
 
-Executable = /data/user/hhamdaoui/nuc-analysis/mmact_analysis_190617/mmact_analysis_190617_all_level_processing.py
+Executable = /data/user/hhamdaoui/nuclearite_analysis/analysis_scripts/all_level_processing.py
 
 initialdir = /data/user/hhamdaoui/MC_nuclearites/
 
-Log    = /scratch/hhamdaoui/nuclearite/log_all_level_processing/$Fn(file).$(cluster).$(Process).log
-Output = /scratch/hhamdaoui/nuclearite/log_all_level_processing/$Fn(file).$(cluster).$(Process).out
-Error  = /scratch/hhamdaoui/nuclearite/log_all_level_processing/$Fn(file).$(cluster).$(Process).err
-transfer_input_files = /data/user/hhamdaoui/nuc-analysis/mmact_analysis_190617/mmact_analysis_utils.py, /data/user/hhamdaoui/nuc-analysis/mmact_analysis_190617/mmact_analysis_funcs.py, /data/user/hhamdaoui/nuc-analysis/mmact_analysis_190617/mmact_analysis_bdtutils.py,/data/user/hhamdaoui/nuc-analysis/00_library/misc.py,/data/user/hhamdaoui/nuc-analysis/00_library/frameobject_manipulation.py,/data/user/hhamdaoui/nuc-analysis/00_library/statistics.py,/data/user/hhamdaoui/nuc-analysis/00_library/plotting.py,/data/user/hhamdaoui/nuc-analysis/00_library/cutting.py
+Log    = /home/hhamdaoui/condor/nuclearites/log_all_level_processing/$Fn(file).$(cluster).$(Process).log
+Output = /home/hhamdaoui/condor/nuclearites/log_all_level_processing/$Fn(file).$(cluster).$(Process).out
+Error  = /home/hhamdaoui/condor/nuclearites/log_all_level_processing/$Fn(file).$(cluster).$(Process).err
+transfer_input_files = /data/user/hhamdaoui/nuclearite_analysis/analysis_scripts/Add_Variables.py, /data/user/hhamdaoui/nuclearite_analysis/analysis_scripts/mmact_analysis_utils.py, /data/user/hhamdaoui/nuclearite_analysis/analysis_scripts/mmact_analysis_funcs.py, /data/user/hhamdaoui/nuclearite_analysis/analysis_scripts/mmact_analysis_bdtutils.py,/data/user/hhamdaoui/nuclearite_analysis/00_library/misc.py,/data/user/hhamdaoui/nuclearite_analysis/00_library/frameobject_manipulation.py,/data/user/hhamdaoui/nuclearite_analysis/00_library/statistics.py,/data/user/hhamdaoui/nuclearite_analysis/00_library/plotting.py,/data/user/hhamdaoui/nuclearite_analysis/00_library/cutting.py
 
 should_transfer_files   = YES
 when_to_transfer_output = ON_EXIT

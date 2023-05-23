@@ -4,8 +4,6 @@
 import time
 script_start_time = time.time()
 
-combo_stable = "/combo/stable_rev175960/"
-icesim_v06   = "/icesim/V06-01-01/"
 # tried this from sandbox/aburgman:
 #/data/user/hhamdaoui/nuclearite_analysis/analysis_scripts/all_level_processing.py --filename /data/user/hhamdaoui/MC_nuclearites/MC3_L2_northprocessed/nuclearite_m_1e+13_nevent_10000_nuclearite_IC86__beta_0001_0002__trigger_level__baseline__proc_0000.i3.gz --gen mpsim --num 00002 --flav monopole
 # data/user/hhamdaoui/nuclearite_analysis/analysis_scripts/all_level_processing.py --gen exprm --num 86009 --flav unknown --filename /data/exp/IceCube/2019/filtered/level2/0101/Run00131986/Level2_*GCD.i3.zst /data/exp/IceCube/2019/filtered/level2/0101/Run00131986/Level2_*00000000.i3.zst
